@@ -8,9 +8,11 @@ import { AccessibilityAnnouncer } from '@/components/AccessibilityAnnouncer';
 
 interface UrgencyResultProps {
   onViewSummary: () => void;
+  onBookAmbulance: () => void;
 }
 
-export function UrgencyResult({ onViewSummary }: UrgencyResultProps) {
+export function UrgencyResult({onViewSummary,
+  onBookAmbulance, }: UrgencyResultProps) {
   const { result } = useEmergency();
   const { t, emergencyNumber } = useLanguage();
   const [announcement, setAnnouncement] = useState('');
@@ -61,7 +63,7 @@ export function UrgencyResult({ onViewSummary }: UrgencyResultProps) {
 
   // Announce urgency level to screen readers
   useEffect(() => {
-    setAnnouncement(`${t('a11y.urgencyAnnouncement')} ${label}`);
+    setAnnouncement(label);
   }, [result.urgencyLevel, label, t]);
 
   return (
@@ -127,6 +129,16 @@ export function UrgencyResult({ onViewSummary }: UrgencyResultProps) {
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
         >
           <Button
+            variant="destructive"
+            size="lg"
+            className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-2 focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            onClick={onBookAmbulance}
+          >
+            Book an ambulance near you
+            <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+          </Button>
+
+          <Button
             onClick={onViewSummary}
             size="lg"
             className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -135,17 +147,7 @@ export function UrgencyResult({ onViewSummary }: UrgencyResultProps) {
             <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
           </Button>
           
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl border-2 focus:ring-2 focus:ring-ring focus:ring-offset-2"
-            asChild
-          >
-            <a href={`tel:${emergencyNumber}`}>
-              <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
-              {t('hero.callEmergency')}
-            </a>
-          </Button>
+          
         </motion.div>
       </motion.div>
     </div>

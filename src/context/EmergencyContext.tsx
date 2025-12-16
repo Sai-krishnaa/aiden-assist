@@ -22,6 +22,10 @@ const initialData: EmergencyData = {
   isConscious: null,
   ageGroup: null,
   location: '',
+  description: '',
+  audioUrl: null,
+  photoFile: null,
+  photoPreviewUrl: null,
 };
 
 const EmergencyContext = createContext<EmergencyContextType | undefined>(undefined);

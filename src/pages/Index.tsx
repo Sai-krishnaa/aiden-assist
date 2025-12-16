@@ -11,8 +11,9 @@ import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { SkipLink } from '@/components/SkipLink';
 import { AccessibilityAnnouncer } from '@/components/AccessibilityAnnouncer';
+import { AmbulanceBooking } from '@/components/AmbulanceBooking';
 
-type View = 'hero' | 'form' | 'result' | 'summary' | 'waiting';
+type View = 'hero' | 'form' | 'result' | 'booking' | 'summary' | 'waiting';
 
 function EmergencyApp() {
   const [view, setView] = useState<View>('hero');
@@ -44,7 +45,7 @@ function EmergencyApp() {
             className="text-lg sm:text-xl font-semibold text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-lg px-1"
             aria-label="Emergency Assist - Return to home"
           >
-            Emergency<span className="text-primary">Assist</span>
+            AIDEN <span className="text-primary">Assist</span>
           </button>
           
           <div className="flex items-center gap-2 sm:gap-4">
@@ -79,14 +80,24 @@ function EmergencyApp() {
               />
             )}
             {view === 'result' && (
-              <UrgencyResult onViewSummary={() => handleViewChange('summary')} />
-            )}
+  <UrgencyResult
+    onViewSummary={() => handleViewChange('summary')}
+    onBookAmbulance={() => handleViewChange('booking')}
+  />
+)}
             {view === 'summary' && (
               <DispatchSummary onContinue={() => handleViewChange('waiting')} />
             )}
             {view === 'waiting' && (
               <WaitingGuidance onStartOver={handleStartOver} />
             )}
+            {view === 'booking' && (
+  <AmbulanceBooking
+    onBack={() => handleViewChange('result')}
+    onConfirm={() => handleViewChange('summary')}
+  />
+)}
+
           </motion.div>
         </AnimatePresence>
       </main>

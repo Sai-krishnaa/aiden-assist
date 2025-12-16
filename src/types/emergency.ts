@@ -9,6 +9,12 @@ export interface EmergencyData {
   isConscious: ConsciousStatus | null;
   ageGroup: AgeGroup | null;
   location: string;
+
+  // new fields
+  description: string;
+  audioUrl: string | null;
+  photoFile: File | null;
+  photoPreviewUrl: string | null;
 }
 
 export interface AssessmentResult {

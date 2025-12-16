@@ -32,10 +32,18 @@ export function LocationMap({ location, className = '' }: LocationMapProps) {
       setError(false);
       
       try {
-        const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}&limit=1`,
-          { headers: { 'Accept-Language': 'en' } }
-        );
+       const response = await fetch(
+  `https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=1&q=${encodeURIComponent(
+    `${location}, India`
+  )}`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'User-Agent': 'EmergencyAssist-MVP/1.0 (contact: dev@local)',
+    },
+  }
+);
+
         
         if (!response.ok) throw new Error('Geocoding failed');
         
@@ -125,16 +133,17 @@ export function LocationMap({ location, className = '' }: LocationMapProps) {
         )}
         
         {!loading && error && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted p-4">
-            <AlertCircle className="h-8 w-8 text-muted-foreground mb-2" />
-            <p className="text-sm text-muted-foreground text-center">
-              Could not locate address on map
-            </p>
-            <p className="text-xs text-muted-foreground/70 mt-1 text-center max-w-xs">
-              {location}
-            </p>
-          </div>
-        )}
+  <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted p-4">
+    <AlertCircle className="h-8 w-8 text-muted-foreground mb-2" />
+    <p className="text-sm text-muted-foreground text-center">
+      We couldn’t pinpoint this location
+    </p>
+    <p className="text-xs text-muted-foreground/70 mt-1 text-center">
+      Try adding city name or use current location
+    </p>
+  </div>
+)}
+
         
         {!loading && !error && coordinates && (
           <iframe
