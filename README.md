@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+# 🆘 AIDEN Assist — Emergency Triage & Ambulance Coordination (MVP)
 
-## Project info
+AIDEN Assist is a **calm, trust-first emergency assistance prototype** designed to help users quickly report an emergency, assess urgency, and find nearby ambulance services — without panic, medical diagnosis, or backend complexity.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This is an **MVP prototype**, focused on **UX clarity, accessibility, and flow**, not production-grade medical logic.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚦 Problem Statement
 
-**Use Lovable**
+In emergency situations, people often:
+- Panic and struggle to explain what happened
+- Waste critical time searching for ambulance numbers
+- Don’t know whether the situation is **urgent or non-urgent**
+- Face poor UI experiences under stress
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**AIDEN Assist** addresses this by providing:
+- A guided, step-by-step emergency intake
+- A calm urgency assessment
+- Clear next actions
+- Easy access to nearby ambulance providers
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧠 What AIDEN Assist Does (MVP Scope)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+✅ Guided emergency form  
+✅ Voice recording, photo capture, and text input  
+✅ Urgency classification (Emergency / Urgent / Non-Emergency)  
+✅ Suggested ambulance type (Basic / Cardiac / Trauma)  
+✅ Location input with OpenStreetMap preview  
+✅ Nearby ambulance & hospital directory (call-to-connect)  
+✅ Full screen flow (no modals, no confusion)  
+✅ Accessibility-first design  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+❌ No diagnosis  
+❌ No medical predictions  
+❌ No backend or real dispatch  
+❌ No patient data storage  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🧭 User Flow
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Start Emergency Assessment**
+2. **Describe What Happened**
+   - Quick options (accident, collapse, breathing issue, etc.)
+   - Optional voice recording
+   - Optional photo capture
+   - Optional text description
+3. **Answer Key Questions**
+   - Consciousness
+   - Age group
+   - Location
+4. **Urgency Result Screen**
+   - Clear urgency level
+   - Recommended action
+   - Suggested ambulance type
+5. **Book Ambulance Near You**
+   - View nearby hospitals / NGOs / ambulance providers
+   - Tap-to-call functionality
+6. **Dispatch Summary & Guidance**
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 🧩 Tech Stack
+
+- **React + TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **Framer Motion** (subtle animations)
+- **OpenStreetMap (Nominatim)** for location preview
+- **Context API** for state management
+- **Vercel** for deployment
+
+---
+
+## 🎨 Design Principles
+
+- Calm, non-panic UI
+- Large touch-friendly buttons
+- High contrast for readability
+- Minimal cognitive load
+- Accessibility-first (screen reader friendly)
+- Mobile-first responsive design
+
+---
+
+## ⚠️ Disclaimer
+
+> **AIDEN Assist is a prototype and does NOT replace emergency medical services.**  
+> It does not diagnose, predict outcomes, or guarantee emergency response.
+
+For real emergencies, users should always contact official emergency services.
+
+---
+
+## 🚀 Getting Started (Local Setup)
+
+```bash
+git clone https://github.com/Sai-krishnaa/aiden-assist.git
+cd aiden-assist
+npm install
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
