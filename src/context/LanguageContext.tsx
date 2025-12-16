@@ -21,17 +21,17 @@ export interface LanguageInfo {
 }
 
 export const languages: LanguageInfo[] = [
-  { code: 'english', name: 'English', nativeName: 'English', emergencyNumber: '112' },
-  { code: 'hindi', name: 'Hindi', nativeName: 'हिन्दी', emergencyNumber: '112' },
-  { code: 'telugu', name: 'Telugu', nativeName: 'తెలుగు', emergencyNumber: '112' },
-  { code: 'tamil', name: 'Tamil', nativeName: 'தமிழ்', emergencyNumber: '112' },
-  { code: 'bengali', name: 'Bengali', nativeName: 'বাংলা', emergencyNumber: '112' },
-  { code: 'marathi', name: 'Marathi', nativeName: 'मराठी', emergencyNumber: '112' },
-  { code: 'gujarati', name: 'Gujarati', nativeName: 'ગુજરાતી', emergencyNumber: '112' },
-  { code: 'kannada', name: 'Kannada', nativeName: 'ಕನ್ನಡ', emergencyNumber: '112' },
-  { code: 'malayalam', name: 'Malayalam', nativeName: 'മലയാളം', emergencyNumber: '112' },
-  { code: 'odia', name: 'Odia', nativeName: 'ଓଡ଼ିଆ', emergencyNumber: '112' },
-  { code: 'punjabi', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', emergencyNumber: '112' },
+  { code: 'english', name: 'English', nativeName: 'English', emergencyNumber: '108' },
+  { code: 'hindi', name: 'Hindi', nativeName: 'हिन्दी', emergencyNumber: '108' },
+  { code: 'telugu', name: 'Telugu', nativeName: 'తెలుగు', emergencyNumber: '108' },
+  { code: 'tamil', name: 'Tamil', nativeName: 'தமிழ்', emergencyNumber: '108' },
+  { code: 'bengali', name: 'Bengali', nativeName: 'বাংলা', emergencyNumber: '108' },
+  { code: 'marathi', name: 'Marathi', nativeName: 'मराठी', emergencyNumber: '108' },
+  { code: 'gujarati', name: 'Gujarati', nativeName: 'ગુજરાતી', emergencyNumber: '108' },
+  { code: 'kannada', name: 'Kannada', nativeName: 'ಕನ್ನಡ', emergencyNumber: '108' },
+  { code: 'malayalam', name: 'Malayalam', nativeName: 'മലയാളം', emergencyNumber: '108' },
+  { code: 'odia', name: 'Odia', nativeName: 'ଓଡ଼ିଆ', emergencyNumber: '108' },
+  { code: 'punjabi', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', emergencyNumber: '108' },
 ];
 
 
